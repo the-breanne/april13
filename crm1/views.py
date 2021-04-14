@@ -59,7 +59,7 @@ def customer_delete(request, pk):
 
 
 
-
+@login_required
 def prod(request):
    products = Product.objects.filter(created_date__lte=timezone.now())
    return render(request, 'crm1/prod.html', {'products': products})
